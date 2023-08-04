@@ -8,7 +8,8 @@
         "settingsVersion": 1,
         "reloadable": true
     },
+    "servers": ["https://raw.githubusercontent.com/noctilucentgames/auto-dice/master/"],
     "author": "Nocti",
     "description": "Auto roll or pass dice rolls",
-    "disableAutoUpdate": true
+    "disableAutoUpdate": false
 }
