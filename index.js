@@ -94,7 +94,6 @@ module.exports = function AutoDice(mod) {
 
     function doShare(event)
     {
-        console.log(dungeon_loot);
         if (dungeon_loot[event.item]) // if no rolls have taken place, just roll
         {
             let my_amount = dungeon_loot[event.item][mod.game.me.gameId] ? dungeon_loot[event.item][mod.game.me.gameId] : 0;
