@@ -1,0 +1,14 @@
+{
+    "name": "Auto Dice",
+    "options": {
+        "niceName": "Auto Dice",
+        "guiName": "auto-dice",
+        "settingsFile": "config.json",
+        "settingsMigrator": "settings_migrator.js",
+        "settingsVersion": 1,
+        "reloadable": true
+    },
+    "author": "Nocti",
+    "description": "Auto roll or pass dice rolls",
+    "disableAutoUpdate": true
+}

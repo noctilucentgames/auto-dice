@@ -1,0 +1,16 @@
+{
+    "files": {
+        "defs/C_ITEM_BIDDING.1.def": "df7216c05b139b177496fb63cfe0dcd80a90150479b9ab24b72416746171766f",
+        "defs/S_RESULT_ITEM_BIDDING.2.def": "9ad1c93055263518b3c1e69ab4723d9ad25af2d2ee68efa17b11f60b7a569cc1",
+        "index.js": "9c14fe134330bf01c5f9cf6f7abe08eddbfc18e02843e92a223602dc4b434da1",
+        "module.json": "58136e89b8b87a30ffe3eb2381a8952a9ae12c1525a12a0dbc3a15579bc98e3d",
+        "settings_migrator.js": "d07ba7895486c6734e8343a99497cf10818334b66ba9262531793d8f0e01ef5a",
+        "settings_structure.js": "223ec7997a6b8f16a8bd55daed74d49e9aea0cce4adf4dd466b4c806a3139098"
+    },
+    "defs": {
+        "C_ITEM_BIDDING": [1,20277],
+        "S_ASK_BIDDING_RARE_ITEM": 1,
+        "S_RESULT_BIDDING_DICE_THROW": 1,
+        "S_RESULT_ITEM_BIDDING": 2
+    }
+}

@@ -1,0 +1,6 @@
+int32 index
+bool roll
+bool pass
+bool unk1
+bool unk2
+bool unk3
