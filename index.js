@@ -236,7 +236,7 @@ module.exports = function AutoDice(mod) {
         }
     }
 
-    mod.command.add("dice", { $default: toggleEnabled, reset, roll, pass, manual, share, do: {roll: requestRoll, pass: requestPass} });
+    mod.command.add("dice", { $default: toggleEnabled, roll, pass, manual, share, do: {roll: requestRoll, pass: requestPass} });
 
     this.destructor = () => {
         mod.command.remove(['dice']);
