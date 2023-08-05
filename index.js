@@ -32,7 +32,7 @@ module.exports = function AutoDice(mod) {
 
     mod.hook("S_ASK_BIDDING_RARE_ITEM", 1, event => {
 
-        if (event.index == 1) { // the first rollable drop's index in a dungeon will be 1
+        if (event.index == 1) { // the first rollable drop's index in a party will be 1
             dungeon_loot = {};
         }
 
@@ -57,6 +57,13 @@ module.exports = function AutoDice(mod) {
     mod.hook("S_RESULT_ITEM_BIDDING", 2, event => {
         won(current_roll.item, event.id);
         current_roll = null;
+    })
+
+    mod.hook("S_SYSTEM_MESSAGE", 1, event => {
+        if (event.message == "@1193") // all dungeons are reset
+        {
+            dungeon_loot = {};
+        }
     })
 
     function handleRoll(event)
@@ -229,8 +236,7 @@ module.exports = function AutoDice(mod) {
         }
     }
 
-
-    mod.command.add("dice", { $default: toggleEnabled, roll, pass, manual, share, do: {roll: requestRoll, pass: requestPass} });
+    mod.command.add("dice", { $default: toggleEnabled, reset, roll, pass, manual, share, do: {roll: requestRoll, pass: requestPass} });
 
     this.destructor = () => {
         mod.command.remove(['dice']);
