@@ -13,6 +13,11 @@ module.exports = function AutoDice(mod) {
 
     function assure(item, player)
     {
+        if (!dungeon_loot)
+        {
+            dungeon_loot = {};
+        }
+
         if (!dungeon_loot[item])
         {
             dungeon_loot[item] = {};
@@ -26,8 +31,11 @@ module.exports = function AutoDice(mod) {
 
     function won(item, player)
     {
-        assure(item, player);
-        ++dungeon_loot[item][player];
+        if (player != 0)
+        {
+            assure(item, player);
+            ++dungeon_loot[item][player];
+        }
     }
 
     mod.hook("S_ASK_BIDDING_RARE_ITEM", 1, event => {
@@ -55,8 +63,11 @@ module.exports = function AutoDice(mod) {
     })
 
     mod.hook("S_RESULT_ITEM_BIDDING", 2, event => {
-        won(current_roll.item, event.id);
-        current_roll = null;
+        if (current_roll)
+        {
+            won(current_roll.item, event.id);
+            current_roll = null;
+        }
     })
 
     mod.hook("S_SYSTEM_MESSAGE", 1, event => {
